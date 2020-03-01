@@ -1,0 +1,127 @@
+<h1>Kalkulator by Aki</h1>
+<hr />
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-5">
+        <span>Należność główna objęta</span>
+      </div>
+      <div class="col-md-7">
+        <input type="number" [(ngModel)]="containerV2.Glowna" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <span>Odsetki objęte</span>
+      </div>
+      <div class="col-md-7">
+        <input type="number" [(ngModel)]="containerV2.OdsetkiObjete" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <span>Koszty sądowe</span>
+      </div>
+      <div class="col-md-7">
+        <input type="number" [(ngModel)]="containerV2.KosztySadowe" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <span>Koszty klauzuli</span>
+      </div>
+      <div class="col-md-7">
+        <input type="number" [(ngModel)]="containerV2.KosztyKlauzuli" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <span>Koszty adwokackie</span>
+      </div>
+      <div class="col-md-7">
+        <input type="number" [(ngModel)]="containerV2.KosztyAdwokackie" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <span>Koszty egzekucyjne</span>
+      </div>
+      <div class="col-md-7">
+        <input type="number" [(ngModel)]="containerV2.KosztyEgzekucyjne" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <span>Odsetki ustawowe od ww. zaległości</span>
+      </div>
+      <div class="col-md-7">
+        <input type="number" [(ngModel)]="containerV2.Odsetki" />
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="row">
+      <div class="col-md-5">
+        <span>Wysokość raty klienta</span>
+      </div>
+      <div class="col-md-7">
+        <input type="number" [(ngModel)]="containerV2.Rata" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <span>Ilośc rat</span>
+      </div>
+      <div class="col-md-7">
+        <input type="number" [(ngModel)]="containerV2.IloscRat" />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-5">
+        <span>Suma kosztów: </span>
+      </div>
+      <div class="col-md-7">
+        <span>{{ this.FormatedTotalCost() }} zł</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <button
+          style="width: 100%;
+        height: 100px;"
+          class="btn btn-primary"
+          (click)="onClick()"
+        >
+          Oblicz
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<hr />
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Data raty</th>
+      <th scope="col">Rata</th>
+      <th scope="col">Należność główna objęta</th>
+      <th scope="col">Odsetki objęte</th>
+      <th scope="col">Koszty sądowe</th>
+      <th scope="col">Koszty klauzuli</th>
+      <th scope="col">Koszty adwokackie</th>
+      <th scope="col">Koszty egzekucyjne</th>
+      <th scope="col">Odsetki ustawowe od ww. zaległości</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let row of dataSource; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td style="text-align: center;" *ngFor="let column of row">
+        {{ column }}
+      </td>
+    </tr>
+  </tbody>
+</table>
