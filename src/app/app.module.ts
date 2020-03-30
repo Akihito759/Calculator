@@ -5,11 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainGridComponent } from './components/main-grid/main-grid.component';
 import { FormsModule } from '@angular/forms';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { OdsetkiComponent } from './components/odsetki/odsetki.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainGridComponent
+    MainGridComponent,
+    NavBarComponent,
+    OdsetkiComponent
   ],
   imports: [
     BrowserModule,

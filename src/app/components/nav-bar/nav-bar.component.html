@@ -1,0 +1,16 @@
+<ul ngbNav #nav="ngbNav"   [activeId]="2" [destroyOnHide]="false" class="nav-tabs">
+    <li [ngbNavItem]="1">
+      <a ngbNavLink>Rozpiska Odsetek</a>
+      <ng-template ngbNavContent>
+        <main-grid></main-grid>
+      </ng-template>
+    </li>
+    <li [ngbNavItem]="2">
+      <a ngbNavLink>Kalkulator należności</a>
+      <ng-template ngbNavContent>
+          <odsetki></odsetki>
+      </ng-template>
+    </li>
+  </ul>
+  
+  <div [ngbNavOutlet]="nav" class="mt-2"></div>
